@@ -14,18 +14,11 @@ public class Card
 	//Suit and rank containers
 	public int rank;
 	public String suit;
-	
+	private final String [] suits = {"SPADES","CLUBS","HEARTS","DIAMONDS"};
 	//Constructor taking two ints
 	public Card(int userSuit, int userRank)
 	{
-		if(userSuit==1)
-			suit = "SPADES";
-		else if(userSuit==2)
-			suit = "CLUBS";
-		else if(userSuit ==3)
-			suit = "HEARTS";
-		else
-			suit = "DIAMONDS";
+		suit = suits[userSuit];
 		
 		rank = userRank;
 	}

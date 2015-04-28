@@ -26,6 +26,7 @@ public class DeckOfCards
 		}
 		shuffle();
 	}
+	
 	public void shuffle()
 	{
 		Random rand = new Random();
@@ -37,6 +38,10 @@ public class DeckOfCards
             deck.set(i, deck.get(newInd));
             deck.set(newInd, deck.get(i));
         }
+	}
+	public void clear()
+	{
+		deck.clear();
 	}
 	public Card getCard(int choice)
 	{

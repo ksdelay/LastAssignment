@@ -25,6 +25,12 @@ public class Hand extends DeckOfCards
 		return(temp);
 		
 	}
+	//change deck method
+	//
+	public void clearDeck()
+	{
+		super.clear();
+	}
 	public void recycleCards()
 	{
 		
