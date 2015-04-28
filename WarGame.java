@@ -4,6 +4,7 @@ public class WarGame
 	public Hand player1;
 	public Hand player2;
 	private Hand winner;
+	private ArrayList<Card> warDeck = new ArrayList();
 	public WarGame()
 	{
 		player1 = new Hand();
@@ -30,23 +31,24 @@ public class WarGame
 					}
 					else if(player1Card.getRank()==player2Card.getRank())
 					{
+						warDeck.add(player1Card);
+						warDeck.add(player2Card);
 						boolean war = true;
 						while(war)
 						{
-							war = war(player1Card,player2Card);
+							war = war();
 						}
 					}
 					
 				}
 	}
-	public boolean war(Card p1, Card p2)
+	public boolean war()
 	{
 		//Creates a war deck array list and a boolean war value
-		ArrayList warDeck = new ArrayList();
 		boolean war = false;
 		//adds the original cards,next card drawn, and the two after that
-		warDeck.add(p1);
-		warDeck.add(p2);
+		Card p1;
+		Card p2;
 		p1 = player1.playHand();
 		p2 = player2.playHand();
 		warDeck.add(p1);
@@ -60,7 +62,8 @@ public class WarGame
 		{
 			for(int i=0;i<warDeck.size();i++)
 			{
-				player1.addUsedCard((Card)warDeck.get(i));
+				player1.addUsedCard(warDeck.get(i));
+				warDeck.remove(i);
 			}
 		}
 		//If player 2's is better give war deck to him
@@ -68,7 +71,8 @@ public class WarGame
 		{
 			for(int i=0;i<warDeck.size();i++)
 			{
-				player2.addUsedCard((Card)warDeck.get(i));
+				player2.addUsedCard(warDeck.get(i));
+				warDeck.remove(i);
 			}
 		}
 		//If its another war set war to true, then finally return war
