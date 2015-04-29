@@ -9,11 +9,11 @@ public class DeckOfCards
 	{
 		
 		Card temp;
-		int suitNum = 1;
+		int suitNum = 0;
 		//starts at two goes until fourteen repeats for every suit
-		for(int i=2; suitNum<5; i++)
+		for(int i=2; suitNum<4; i++)
 		{
-			if(i<=14)
+			if(i<=14 && i!=1)
 			{
 				temp = new Card(suitNum,i);
 				deck.add(temp);
@@ -48,9 +48,9 @@ public class DeckOfCards
 		return((Card)deck.get(choice));
 	}
 	
-	public void remove(Card delCard)
+	public void remove(int delInd)
 	{
-		deck.remove(delCard);
+		deck.remove(delInd);
 	}
 	public void add(Card newCard)
 	{

@@ -12,8 +12,8 @@ public class Hand extends DeckOfCards
 	public Card playHand()
 	{
 		//If the deck is empty recylce the used cards
-		if(isEmpty())
-			return(new Card(1,1));
+		if(isLoser())
+			return(null);
 		else if(super.getDeck().isEmpty())
 		{
 			recycleCards();
@@ -21,7 +21,7 @@ public class Hand extends DeckOfCards
 		//Temp is the current card adds it to used card then removes it from the deck 
 		//Returns the rank of card
 		Card temp = super.getCard(0);
-		super.remove(temp);
+		super.remove(0);
 		return(temp);
 		
 	}
