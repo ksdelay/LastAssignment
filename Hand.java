@@ -1,14 +1,26 @@
 import java.util.ArrayList;
+/**
+ * Hand class extending deck of cards
+ * @author Kevin Delay
+ *
+ */
 public class Hand extends DeckOfCards
 {
 	//List of used cards
 	ArrayList usedCards;
+	/*
+	 * Defauklt constructor creating a deck an initializing the used cards array list
+	 */
 	public Hand()
 	{
 		//Calls super then make new empty used cards list
 		super();
 		usedCards = new ArrayList();
 	}
+	/**
+	 * Play hand tests if its a loser then if not returns the next card and moves it to used Cards
+	 * @return card on top of the deck
+	 */
 	public Card playHand()
 	{
 		//If the deck is empty recylce the used cards
@@ -25,12 +37,15 @@ public class Hand extends DeckOfCards
 		return(temp);
 		
 	}
-	//change deck method
+	//Clear deck method
 	//
 	public void clearDeck()
 	{
 		super.clear();
 	}
+	/**
+	 * Void method recylce cards shuffles the sed cards back into the deck
+	 */
 	public void recycleCards()
 	{
 		
@@ -42,6 +57,10 @@ public class Hand extends DeckOfCards
 		}
 		super.shuffle();
 	}
+	/**
+	 * Is empty returns true if its empty false if not
+	 * @return
+	 */
 	public boolean isEmpty()
 	{
 		//if the deck is empty return true 
@@ -52,6 +71,10 @@ public class Hand extends DeckOfCards
 		}
 		return empty;
 	}
+	/**
+	 * Tests if the hand is out of used cards and normal cards
+	 * @return
+	 */
 	public boolean isLoser()
 	{
 		boolean loser = false;
@@ -59,6 +82,10 @@ public class Hand extends DeckOfCards
 			loser = true;
 		return(loser);
 	}
+	/**
+	 * Void method adding cards to the used card list
+	 * @param newCard the card to be added
+	 */
 	public void addUsedCard(Card newCard)
 	{
 		usedCards.add(newCard);

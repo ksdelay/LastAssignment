@@ -6,6 +6,9 @@ public class warGameCW
 	private Hand player2;
 	private ArrayList <Card> warDeck;
 	private WarGame game;
+	/**
+	 * Default war game constructor
+	 */
 	public warGameCW()
 	{
 	 game = new WarGame();
@@ -13,17 +16,17 @@ public class warGameCW
 	 player1 = game.getPlayer1();
 	 player2 = game.getPlayer2();
 	}
-	//Returns true when the games over
+	/**
+	 * Returns the Loser of the game
+	 * @return
+	 */
 	public int playGame()
 	{
 		Card player1Card = player1.playHand();
 		Card player2Card = player2.playHand();	
 		int loser;
 		while(!(player1Card==null)&&!(player2Card==null))
-				{
-				
-					System.out.println("EVEN LESS LIKELY");
-					
+				{					
 					System.out.println("Player 1 card: "+ player1Card.getRank()+" player 2 card: "+ player2Card.getRank());
 					if(!(player1Card.getRank()==1)&&!(player1Card.getRank()==1))
 					{
@@ -66,6 +69,10 @@ public class warGameCW
 			loser = 2;
 		return(loser);
 	}
+	/**
+	 * War method returning true if its a war false if not
+	 * @return
+	 */
 	public boolean war()
 	{
 		boolean war = false;

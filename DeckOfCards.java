@@ -1,10 +1,17 @@
 import java.util.ArrayList;
+/**
+ * Deck of cards class creating a 52 card deck
+ * Kevin Delay
+ * CS 110
+ */
 import java.util.Random;
 public class DeckOfCards
 {
 	//Array list of cards
 	private ArrayList deck = new ArrayList();
-	//Default consturctor 
+	/**
+	 * Default  constructor creating a 52 cards deck 
+	 */
 	public DeckOfCards()
 	{
 		
@@ -26,7 +33,9 @@ public class DeckOfCards
 		}
 		shuffle();
 	}
-	
+	/**
+	 * Shuffles the deck into a random order void method
+	 */
 	public void shuffle()
 	{
 		Random rand = new Random();
@@ -39,15 +48,26 @@ public class DeckOfCards
             deck.set(newInd, deck.get(i));
         }
 	}
+	/**
+	 * Clears the deck
+	 */
 	public void clear()
 	{
 		deck.clear();
 	}
+	/**
+	 * gets the card based on the index
+	 * @param choice the index of desired card
+	 * @return the card desired
+	 */
 	public Card getCard(int choice)
 	{
 		return((Card)deck.get(choice));
 	}
-	
+	/**
+	 * Void method removing from an index given by user
+	 * @param delInd
+	 */
 	public void remove(int delInd)
 	{
 		deck.remove(delInd);
